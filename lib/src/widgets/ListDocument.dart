@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:employprueba/src/screens/documento.dart';
 
 class ListDocument {
   Widget listadeDocumentos(BuildContext context) {
@@ -9,7 +10,7 @@ class ListDocument {
           subtitle: Text('Lorem ipsum dolor sit'),
           trailing: Icon(Icons.check),
           onTap: () {
-            
+            Navigator.push( context, new MaterialPageRoute(builder: (context) => new DocumentoPdf()));
           },
         ),
         Container(

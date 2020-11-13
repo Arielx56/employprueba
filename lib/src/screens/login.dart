@@ -1,3 +1,4 @@
+import 'package:employprueba/src/screens/pass.dart';
 import 'package:employprueba/src/widgets/fondo1.dart';
 import 'package:flutter/material.dart';
 
@@ -18,21 +19,29 @@ class LoginScreen extends StatelessWidget {
                 SizedBox(height: 350.0,width: double.infinity,),
               Text('¡Hola!',
               style: TextStyle(
-                  fontSize: 40.0,
+                fontSize: 40.0,
                 fontWeight: FontWeight.bold,
-                foreground: Paint()..shader = degradadoTexto
-              ),),
+                foreground: Paint()..shader = degradadoTexto),
+              ),
               Container(
                 padding: EdgeInsets.only(left: 120.0, top: 20.0),
                 child: TextField(
                 style: TextStyle(fontSize: 20.0),
                 showCursor: true,       
-                decoration: InputDecoration.collapsed(hintText: 'Ingrese su usuario')
-              ),
-              )
-              
+                decoration: InputDecoration.collapsed(hintText: 'Ingrese su usuario')),
+                ),
               ],
             ),
+            Positioned(
+               right:  1.0,
+               bottom: 20.0, 
+               child: IconButton(icon: Icon(Icons.arrow_forward_ios,size: 40.0,), onPressed: () {
+                   Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                    return PassScreen();
+                   })
+                   );
+                 },),
+               ),
         ],
       ),
     );
