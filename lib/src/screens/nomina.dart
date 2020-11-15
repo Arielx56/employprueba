@@ -1,3 +1,4 @@
+import 'package:employprueba/src/screens/pruebahor.dart';
 import 'package:employprueba/src/widgets/ListDocument.dart';
 import 'package:employprueba/src/widgets/btnoption.dart';
 import 'package:employprueba/src/widgets/fondo1.dart';
@@ -26,7 +27,7 @@ class NominaScreen extends StatelessWidget {
           
         ],
       ),
-      floatingActionButton: BtnMenu(),
+      floatingActionButton: Example(),
       
     );
   }

@@ -56,19 +56,39 @@ Widget fondoApp() {
 
 Widget coloresGradiant(Color color1, Color color2, Color color3, String texto) {
   final Shader degradadoTexto = LinearGradient(
-    begin: FractionalOffset(0.0,0.3),
-    end: FractionalOffset(0.8,1.0),
+    begin: FractionalOffset(0.0, 0.3),
+    end: FractionalOffset(0.8, 1.0),
     tileMode: TileMode.repeated,
-    colors: [
-      color1,
-      color2,
-      color3
-    ],
+    colors: [color1, color2, color3],
   ).createShader(Rect.fromLTWH(0.0, 0.0, 400.0, 70.0));
 
-  return Text(texto, style: TextStyle(
-    fontSize: 35.0,
-    fontWeight: FontWeight.bold,
-    foreground: Paint()..shader = degradadoTexto
-  ));
+  return Text(texto,
+      style: TextStyle(
+          fontSize: 35.0,
+          fontWeight: FontWeight.bold,
+          foreground: Paint()..shader = degradadoTexto));
+}
+
+Widget fondoPageview() {
+  final degradadoPageView = Container(
+    height: double.infinity,
+    width: double.infinity,
+    decoration: BoxDecoration(
+      gradient: LinearGradient(
+        begin: FractionalOffset(0.0, 0.6),
+        end: FractionalOffset(0.0, 1.0),
+        colors: [
+        Color.fromRGBO(32, 149, 244, 1.0),
+        Color.fromRGBO(13, 182, 215, 1.0),
+        Color.fromRGBO(13, 182, 215, 1.0)
+      ])
+    ),
+  );
+
+
+  return Stack(
+    children: [
+      degradadoPageView
+    ],
+  );
 }
