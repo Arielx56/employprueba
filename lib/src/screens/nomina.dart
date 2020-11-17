@@ -21,7 +21,6 @@ class NominaScreen extends StatelessWidget {
               )
             ],
           ),
-          // coloresGradiant(Color.fromRGBO(13, 182, 215, 1.0), Color.fromRGBO(26, 163, 235, 1.0),Color.fromRGBO(32, 149, 244, 1.0), 'Documentos'),
           listDoc.listadeDocumentos(context),
           listDoc.listadeDocumentos(context),
           

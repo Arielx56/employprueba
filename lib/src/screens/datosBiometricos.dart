@@ -2,6 +2,7 @@ import 'package:employprueba/src/widgets/fondo1.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:flutter_signature_pad/flutter_signature_pad.dart';
 
 class DatosPageview extends StatefulWidget {
   const DatosPageview({Key key}) : super(key: key);
@@ -15,8 +16,7 @@ class _DatosPageviewState extends State<DatosPageview> {
   File _image1;
   final picker = ImagePicker();
 
-
- // este funcion es del tipo asincrona y se va a encargar de obtener la imagen por eso es de tipo async puesto que se ejecutara hasta que la camara obtenga el "source"  
+  // este funcion es del tipo asincrona y se va a encargar de obtener la imagen por eso es de tipo async puesto que se ejecutara hasta que la camara obtenga el "source"
   Future getImage() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
     setState(() {
@@ -27,6 +27,7 @@ class _DatosPageviewState extends State<DatosPageview> {
       }
     });
   }
+
   Future getImage1() async {
     final pickedFile = await picker.getImage(source: ImageSource.camera);
 
@@ -65,9 +66,19 @@ class _DatosPageviewState extends State<DatosPageview> {
             child: Stack(
               children: [
                 ListTile(
-                  title: Text('Datos Biométicos',style: TextStyle(fontSize: 31.0,fontWeight: FontWeight.bold,color: Colors.white)),
-                  subtitle: Container(margin: EdgeInsets.only(top: 20.0),
-                    child: Text('Dorso de Documento',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white, fontSize: 20.0),
+                  title: Text('Datos Biométicos',
+                      style: TextStyle(
+                          fontSize: 31.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                  subtitle: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text(
+                      'Dorso de Documento',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
                     ),
                   ),
                 ),
@@ -76,7 +87,16 @@ class _DatosPageviewState extends State<DatosPageview> {
                 GestureDetector(
                   onTap: getImage,
                   child: Container(
-                    child: _image == null? Icon(Icons.photo_camera,size: 50.0,color: Colors.white, ): Image.file(_image,fit: BoxFit.cover,),
+                    child: _image == null
+                        ? Icon(
+                            Icons.photo_camera,
+                            size: 50.0,
+                            color: Colors.white,
+                          )
+                        : Image.file(
+                            _image,
+                            fit: BoxFit.cover,
+                          ),
                     margin: EdgeInsets.only(top: 110, left: 20.0, right: 20.0),
                     height: 300,
                     width: 350,
@@ -105,15 +125,25 @@ class _DatosPageviewState extends State<DatosPageview> {
               children: [
                 ListTile(
                   title: Text('Datos Biométicos',
-                      style: TextStyle( fontSize: 31.0, fontWeight: FontWeight.bold,color: Colors.white)),
-                  subtitle: Container(margin: EdgeInsets.only(top: 20.0),
-                    child: Text('Dorso de Documento',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white, fontSize: 20.0), ),
+                      style: TextStyle(
+                          fontSize: 31.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                  subtitle: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text(
+                      'Dorso de Documento',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
                   ),
                 ),
                 GestureDetector(
                   onTap: getImage1,
                   child: Container(
-                    child: _image1 == null ? Icon(Icons.photo_camera,size: 50.0,color: Colors.white,) : Image.file(_image1,fit: BoxFit.cover,),
+                    child: _image1 == null ? Icon(Icons.photo_camera, size: 50.0,color: Colors.white,) : Image.file( _image1,fit: BoxFit.cover,),
                     margin: EdgeInsets.only(top: 110, left: 20.0, right: 20.0),
                     height: 300,
                     width: 350,
@@ -136,15 +166,25 @@ class _DatosPageviewState extends State<DatosPageview> {
       body: Stack(
         children: [
           fondoPageview(),
-           Padding(
+          Padding(
             padding: EdgeInsets.only(top: 50.0),
             child: Stack(
               children: [
                 ListTile(
                   title: Text('Datos Biométicos',
-                      style: TextStyle( fontSize: 31.0, fontWeight: FontWeight.bold,color: Colors.white)),
-                  subtitle: Container(margin: EdgeInsets.only(top: 20.0),
-                    child: Text('Selfie',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white, fontSize: 20.0), ),
+                      style: TextStyle(
+                          fontSize: 31.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                  subtitle: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text(
+                      'Selfie',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
                   ),
                 ),
                 GestureDetector(
@@ -163,7 +203,7 @@ class _DatosPageviewState extends State<DatosPageview> {
               ],
             ),
           ),
-          ],
+        ],
       ),
     );
   }
@@ -173,21 +213,33 @@ class _DatosPageviewState extends State<DatosPageview> {
       body: Stack(
         children: [
           fondoPageview(),
-            Padding(
+          Padding(
             padding: EdgeInsets.only(top: 50.0),
             child: Stack(
               children: [
                 ListTile(
                   title: Text('Datos Biométicos',
-                      style: TextStyle( fontSize: 31.0, fontWeight: FontWeight.bold,color: Colors.white)),
-                  subtitle: Container(margin: EdgeInsets.only(top: 20.0),
-                    child: Text('Firma',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white, fontSize: 20.0), ),
+                      style: TextStyle(
+                          fontSize: 31.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                  subtitle: Container(
+                    margin: EdgeInsets.only(top: 20.0),
+                    child: Text(
+                      'Firma',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
                   ),
                 ),
                 GestureDetector(
-                  // onTap: getImage1,
+                  onTap: () {
+                    // firmaScreen();
+                  },
                   child: Container(
-                    // child: _image1 == null ? Icon(Icons.photo_camera,size: 50.0,color: Colors.white,) : Image.file(_image1,fit: BoxFit.cover,),
+                    
                     margin: EdgeInsets.only(top: 110, left: 20.0, right: 20.0),
                     height: 380,
                     width: 350,
@@ -200,24 +252,27 @@ class _DatosPageviewState extends State<DatosPageview> {
               ],
             ),
           ),
-        
         ],
       ),
     );
   }
 
-  Widget _pinDeSeguridad(){
-    return Scaffold(
+  Widget firmaScreen(){
+
+   return Scaffold(
       body: Stack(
         children: [
           fondoPageview(),
           Padding(
-            padding: EdgeInsets.only(top: 50.0),
+            padding: EdgeInsets.only(top: 100.0),
             child: Stack(
               children: [
                 ListTile(
-                  title: Text('Datos Biométicos',
-                      style: TextStyle( fontSize: 31.0, fontWeight: FontWeight.bold,color: Colors.white)),
+                  title: Text('Crea tu Firma',
+                      style: TextStyle(
+                          fontSize: 31.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
                 ),
               ],
             ),
@@ -227,7 +282,7 @@ class _DatosPageviewState extends State<DatosPageview> {
     );
   }
 
-  Widget _confpindeSeguridad(){
+  Widget _pinDeSeguridad() {
     return Scaffold(
       body: Stack(
         children: [
@@ -238,7 +293,34 @@ class _DatosPageviewState extends State<DatosPageview> {
               children: [
                 ListTile(
                   title: Text('Datos Biométicos',
-                      style: TextStyle( fontSize: 31.0, fontWeight: FontWeight.bold,color: Colors.white)),
+                      style: TextStyle(
+                          fontSize: 31.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _confpindeSeguridad() {
+    return Scaffold(
+      body: Stack(
+        children: [
+          fondoPageview(),
+          Padding(
+            padding: EdgeInsets.only(top: 50.0),
+            child: Stack(
+              children: [
+                ListTile(
+                  title: Text('Datos Biométicos',
+                      style: TextStyle(
+                          fontSize: 31.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
                 ),
               ],
             ),

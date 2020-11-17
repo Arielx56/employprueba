@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 class IntroScreen extends StatelessWidget {
 
  final Shader degradadoTexto = LinearGradient(
-  colors: [Color(0xffDA44bb), Color(0xff8921aa)],
-).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+  colors: [Color.fromRGBO(183, 48, 176, 1.0), Color(0xffDA44bb), Color(0xff8921aa)],
+).createShader(Rect.fromLTWH(0.0, 0.0, 400.0, 70.0));
 
 
   @override
@@ -17,13 +17,9 @@ class IntroScreen extends StatelessWidget {
         children: [
           fondoApp(),
           Center(
-            child: Text('¡Bienvenido!',
-            style: TextStyle(
-              fontSize: 40.0,
-              fontWeight: FontWeight.bold,
-              foreground: Paint()..shader = degradadoTexto
-              ),
-              ),
+            child: Text('¡Bienvenido!',style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold,
+            foreground: Paint()..shader = degradadoTexto ),
+            ),
           ),
           Positioned(
             right:  1.0,
