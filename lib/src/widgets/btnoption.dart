@@ -1,6 +1,6 @@
 import 'package:employprueba/src/screens/documentos.dart';
 import 'package:employprueba/src/screens/nomina.dart';
-import 'package:employprueba/src/screens/pruebahor.dart';
+// import 'package:employprueba/src/screens/pruebahor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
@@ -19,6 +19,7 @@ class BtnMenu extends StatelessWidget {
         SpeedDialChild(
             child: Icon(Icons.insert_drive_file, color: Colors.black,),
             backgroundColor: Colors.white,
+            label: 'Documentos',
             onTap: () {
               //  Navigator.push( context, new MaterialPageRoute(builder: (context) => new DescripcionProducto()));
               Navigator.of(context).push( MaterialPageRoute(builder: (context) => DocumentScreen()));
@@ -26,9 +27,10 @@ class BtnMenu extends StatelessWidget {
         SpeedDialChild(
             child: Icon(Icons.folder_open, color: Colors.black,),
             backgroundColor: Colors.white,
+            label: 'Nomina',
             onTap: () {
               //  Navigator.push( context, new MaterialPageRoute(builder: (context) => new DescripcionProducto()));
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => NominaScreen()));
+              Navigator.of(context).push( MaterialPageRoute(builder: (context) => NominaScreen()));
             }),
         SpeedDialChild(
             child: Icon(

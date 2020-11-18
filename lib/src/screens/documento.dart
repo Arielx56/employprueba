@@ -1,6 +1,7 @@
 import 'package:employprueba/src/screens/datosBiometricos.dart';
 import 'package:flutter/material.dart';
 import 'package:pdf_flutter/pdf_flutter.dart';
+
 class DocumentoPdf extends StatefulWidget {
   const DocumentoPdf({Key key}) : super(key: key);
 
@@ -39,7 +40,7 @@ class _DocumentoPdfState extends State<DocumentoPdf> {
         child: Column(
           children: [
             // SizedBox(height: 20.0,),
-            PDF.assets('assets/curriculum_AAMM_MEJORADO.pdf',height: 600.0,width: 500.0,),
+            PDF.assets('assets/tp_n2.pdf',height: 600.0,width: 500.0,),
             SizedBox(height: 7.0,),
             RaisedButton(
             color: Color.fromRGBO(28,154, 238, 1.0),

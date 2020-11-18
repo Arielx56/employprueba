@@ -1,3 +1,4 @@
+import 'package:employprueba/src/screens/nomina.dart';
 import 'package:flutter/material.dart';
 import 'package:employprueba/src/screens/intro.dart';
 void main() {
